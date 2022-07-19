@@ -1,0 +1,25 @@
+{
+  "name": "api-de-usuario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasJoao/api-de-usuario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiasJoao/api-de-usuario/issues"
+  },
+  "homepage": "https://github.com/matiasJoao/api-de-usuario#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.5"
+  }
+}
