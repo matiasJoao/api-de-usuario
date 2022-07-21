@@ -1,11 +1,14 @@
 const mongoose = require('../DataBase/index');
+const crypt = require('bcryptjs');
+
+
 
 const userdb = new mongoose.Schema({
-    name : {
+    name: {
         type: String,
         require: true
     },
-    email : {
+    email: {
         type: String,
         require: true,
         unique: true,
@@ -13,18 +16,23 @@ const userdb = new mongoose.Schema({
         
     },
 
-    password : {
+    password: {
         type: String,
         require: true, 
         select: false
     },
 
-    date : {
+    date: {
         type: Date,
         default: Date.now
     }, 
 });
 
+userdb.pre('save',  async function(next){
+    const incript = await crypt.hash(this.password, 10);
+    this.password = incript;
+    next();
+});
 const user = mongoose.model('user', userdb);
 
 module.exports = user;
